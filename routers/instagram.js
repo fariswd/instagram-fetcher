@@ -7,8 +7,8 @@ router.get('/', function (req, res) {
   if(!req.query.l){
     res.send('invalid query')
   }
-  
-  let suffix = 'media/?size='
+
+  let suffix = '/media/?size='
   let fixUrl = `${url.parse(req.query.l).protocol}//${url.parse(req.query.l).host}${url.parse(req.query.l).pathname}`
 
   if(req.query.v){
@@ -24,7 +24,7 @@ router.get('/', function (req, res) {
       }
       res.send(obj)
     });
-    
+
   } else {
     let obj = {
       links: req.query.l,
@@ -34,7 +34,7 @@ router.get('/', function (req, res) {
     }
     res.send(obj)
   }
-  
+
 })
 
 module.exports = router

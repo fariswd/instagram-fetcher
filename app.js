@@ -1,8 +1,11 @@
 const express    = require('express')
 const app        = express()
+const cors       = require('cors')
 
 //route
 const instagram  = require('./routers/instagram')
+
+app.use(cors())
 
 // index
 app.use('/', instagram)
